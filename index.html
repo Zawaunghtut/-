@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ဝဂ္ဂ ယတြာ တွက်ချက်မှုစနစ်</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Myanmar:wght@400;700&family=Cinzel+Decorative:wght@400;700&family=Noto+Sans+Myanmar:wght@300;400;700&display=swap');
+
+  :root {
+    --gold: #C9952A;
+    --gold-light: #E8B84B;
+    --gold-dark: #8B6914;
+    --deep-red: #6B1F1F;
+    --crimson: #9B2335;
+    --ivory: #F5ECD7;
+    --cream: #FAF3E0;
+    --parchment: #EDE0C4;
+    --dark-brown: #2C1810;
+    --medium-brown: #5C3D2E;
+    --teal: #1B6B6B;
+    --teal-light: #2A9090;
+    --shadow: rgba(44, 24, 16, 0.4);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Serif Myanmar', serif;
+    background: var(--dark-brown);
+    min-height: 100vh;
+    color: var(--ivory);
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(201,149,42,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(107,31,31,0.2) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9952A' fill-opacity='0.04'%3E%3Cpath d='M30 30m-15 0a15 15 0 1 0 30 0a15 15 0 1 0-30 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .page-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 40px 20px 30px;
+    position: relative;
+  }
+
+  .header::before, .header::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 10px 0;
+  }
+
+  .header-ornament {
+    font-size: 2rem;
+    color: var(--gold);
+    letter-spacing: 8px;
+    margin-bottom: 5px;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif Myanmar', serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--gold-light);
+    text-shadow: 0 0 20px rgba(201,149,42,0.5), 2px 2px 4px var(--dark-brown);
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+  }
+
+  .header h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    color: var(--gold-dark);
+    letter-spacing: 4px;
+    font-weight: 400;
+  }
+
+  .header-desc {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--parchment);
+    opacity: 0.8;
+    line-height: 1.8;
+  }
+
+  /* Vagga Reference Table */
+  .vagga-table-section {
+    background: linear-gradient(135deg, rgba(92,61,46,0.5), rgba(44,24,16,0.8));
+    border: 1px solid var(--gold-dark);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px var(--shadow), inset 0 1px 0 rgba(201,149,42,0.2);
+  }
+
+  .section-title {
+    font-size: 1rem;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .section-title::before, .section-title::after {
+    content: '❖';
+    color: var(--gold-dark);
+    font-size: 0.7rem;
+  }
+
+  .vagga-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 4px;
+    font-size: 0.75rem;
+  }
+
+  .vagga-header-row {
+    display: contents;
+  }
+
+  .vg-cell {
+    background: rgba(201,149,42,0.1);
+    border: 1px solid rgba(201,149,42,0.25);
+    border-radius: 4px;
+    padding: 5px 3px;
+    text-align: center;
+    color: var(--parchment);
+    line-height: 1.4;
+  }
+
+  .vg-cell.header {
+    background: rgba(201,149,42,0.25);
+    color: var(--gold-light);
+    font-weight: bold;
+    font-size: 0.7rem;
+  }
+
+  .vg-cell.vagga-name {
+    background: rgba(107,31,31,0.4);
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+
+  /* Number Grid */
+  .num-ref {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .num-ref-item {
+    background: rgba(44,24,16,0.6);
+    border: 1px solid rgba(201,149,42,0.3);
+    border-radius: 6px;
+    padding: 6px 8px;
+    text-align: center;
+    font-size: 0.72rem;
+  }
+
+  .num-ref-item .letter {
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    display: block;
+  }
+
+  .num-ref-item .val {
+    color: var(--parchment);
+    font-size: 0.65rem;
+    opacity: 0.8;
+  }
+
+  /* Calculator Cards */
+  .calc-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 700px) {
+    .calc-section { grid-template-columns: 1fr; }
+  }
+
+  .calc-card {
+    background: linear-gradient(160deg, rgba(92,61,46,0.6), rgba(44,24,16,0.9));
+    border: 1px solid var(--gold-dark);
+    border-radius: 12px;
+    padding: 20px 16px;
+    box-shadow: 0 4px 16px var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .calc-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .calc-card-icon {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .calc-card h3 {
+    color: var(--gold);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+  }
+
+  .input-group {
+    margin-bottom: 12px;
+  }
+
+  .input-group label {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--gold-dark);
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+  }
+
+  .input-group input {
+    width: 100%;
+    background: rgba(245,236,215,0.1);
+    border: 1px solid rgba(201,149,42,0.4);
+    border-radius: 6px;
+    padding: 9px 12px;
+    color: var(--ivory);
+    font-family: 'Noto Serif Myanmar', serif;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.3s, background 0.3s;
+  }
+
+  .input-group input:focus {
+    border-color: var(--gold);
+    background: rgba(201,149,42,0.1);
+  }
+
+  .input-group input::placeholder {
+    color: rgba(245,236,215,0.35);
+    font-size: 0.75rem;
+  }
+
+  .calc-result {
+    background: rgba(44,24,16,0.7);
+    border: 1px solid rgba(201,149,42,0.3);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .calc-result .result-num {
+    font-size: 2rem;
+    color: var(--gold-light);
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(201,149,42,0.6);
+  }
+
+  .calc-result .result-label {
+    font-size: 0.7rem;
+    color: var(--parchment);
+    opacity: 0.7;
+  }
+
+  .calc-result .vagga-badge {
+    margin-top: 4px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+
+  /* Vagga color themes */
+  .vagga-1 { background: rgba(139,69,19,0.4); color: #E8A87C; border: 1px solid #8B4513; }
+  .vagga-2 { background: rgba(27,107,107,0.4); color: #7ECECE; border: 1px solid #1B6B6B; }
+  .vagga-3 { background: rgba(155,35,53,0.4); color: #E87C8A; border: 1px solid #9B2335; }
+  .vagga-4 { background: rgba(75,0,130,0.4); color: #C87CE8; border: 1px solid #4B0082; }
+  .vagga-5 { background: rgba(0,100,0,0.4); color: #7CE87C; border: 1px solid #006400; }
+  .vagga-6 { background: rgba(184,134,11,0.4); color: #E8D47C; border: 1px solid #B8860B; }
+  .vagga-7 { background: rgba(70,130,180,0.4); color: #7CB5E8; border: 1px solid #4682B4; }
+  .vagga-8 { background: rgba(107,31,31,0.4); color: #E87C7C; border: 1px solid #6B1F1F; }
+  .vagga-9 { background: rgba(101,67,33,0.5); color: #F0C080; border: 1px solid #8B5A2B; }
+
+  /* Main Calculator */
+  .main-calc {
+    background: linear-gradient(135deg, rgba(92,61,46,0.4), rgba(44,24,16,0.9));
+    border: 2px solid var(--gold-dark);
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 32px var(--shadow), inset 0 1px 0 rgba(201,149,42,0.15);
+  }
+
+  .btn-calc {
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-dark));
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-family: 'Noto Serif Myanmar', serif;
+    font-size: 1rem;
+    color: var(--dark-brown);
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    margin-top: 16px;
+    box-shadow: 0 4px 12px rgba(201,149,42,0.3);
+  }
+
+  .btn-calc:hover {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(201,149,42,0.5);
+  }
+
+  /* Result Panel */
+  .result-panel {
+    display: none;
+    background: linear-gradient(135deg, rgba(44,24,16,0.95), rgba(107,31,31,0.3));
+    border: 2px solid var(--gold);
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 0 40px rgba(201,149,42,0.2), 0 8px 32px var(--shadow);
+    animation: fadeIn 0.5s ease;
+  }
+
+  .result-panel.visible { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .result-panel h3 {
+    text-align: center;
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+
+  .result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(201,149,42,0.15);
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .result-row:last-child { border-bottom: none; }
+
+  .result-row .r-label {
+    color: var(--parchment);
+    opacity: 0.8;
+    font-size: 0.85rem;
+  }
+
+  .result-row .r-value {
+    color: var(--gold-light);
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+
+  .match-indicator {
+    text-align: center;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .match-yes {
+    background: rgba(0,100,0,0.3);
+    border: 2px solid #2E8B57;
+    color: #90EE90;
+  }
+
+  .match-no {
+    background: rgba(139,0,0,0.3);
+    border: 2px solid #8B0000;
+    color: #FFA07A;
+  }
+
+  /* Awtattan Section */
+  .awtattan-section {
+    background: linear-gradient(135deg, rgba(27,107,107,0.2), rgba(44,24,16,0.8));
+    border: 1px solid var(--teal);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .awtattan-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  @media (max-width: 500px) {
+    .awtattan-grid { grid-template-columns: repeat(3, 1fr); }
+    .vagga-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .awt-card {
+    background: rgba(44,24,16,0.7);
+    border: 1px solid var(--teal);
+    border-radius: 8px;
+    padding: 10px 6px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .awt-card.highlight {
+    background: rgba(27,107,107,0.4);
+    border-color: var(--teal-light);
+    box-shadow: 0 0 12px rgba(27,107,107,0.4);
+    transform: scale(1.05);
+  }
+
+  .awt-card .awt-num {
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+
+  .awt-card .awt-name {
+    color: var(--teal-light);
+    font-size: 0.75rem;
+    margin-bottom: 3px;
+  }
+
+  .awt-card .awt-desc {
+    color: var(--parchment);
+    font-size: 0.6rem;
+    opacity: 0.75;
+    line-height: 1.3;
+  }
+
+  /* Divider */
+  .ornament-divider {
+    text-align: center;
+    color: var(--gold-dark);
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+    margin: 8px 0 20px;
+    opacity: 0.7;
+  }
+
+  /* Letter value quick ref */
+  .letter-table {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 3px;
+    font-size: 0.65rem;
+  }
+
+  .lt-cell {
+    background: rgba(201,149,42,0.08);
+    border: 1px solid rgba(201,149,42,0.2);
+    border-radius: 3px;
+    padding: 4px 2px;
+    text-align: center;
+    color: var(--parchment);
+  }
+
+  .lt-cell .lt-char { color: var(--gold-light); font-size: 0.8rem; display: block; }
+
+  .footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--gold-dark);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    opacity: 0.7;
+  }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+    background: rgba(44,24,16,0.6);
+    border: 1px solid rgba(201,149,42,0.3);
+    border-radius: 10px;
+    padding: 4px;
+  }
+
+  .tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--parchment);
+    font-family: 'Noto Serif Myanmar', serif;
+    font-size: 0.75rem;
+    padding: 10px 6px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0.7;
+  }
+
+  .tab-btn.active {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    color: var(--dark-brown);
+    font-weight: bold;
+    opacity: 1;
+    box-shadow: 0 2px 8px rgba(201,149,42,0.3);
+  }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Scroll cycle display */
+  .cycle-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 12px;
+    padding: 10px;
+    background: rgba(44,24,16,0.5);
+    border-radius: 8px;
+    border: 1px solid rgba(201,149,42,0.2);
+  }
+
+  .cycle-step {
+    font-size: 0.7rem;
+    color: var(--parchment);
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: rgba(201,149,42,0.1);
+  }
+
+  .cycle-step.active-step {
+    background: rgba(201,149,42,0.35);
+    color: var(--gold-light);
+    font-weight: bold;
+  }
+
+  .cycle-arrow { color: var(--gold-dark); font-size: 0.7rem; }
+
+</style>
+</head>
+<body>
+
+<!-- ===== LOCK SCREEN OVERLAY ===== -->
+<div id="lock-screen" style="
+  position: fixed; inset: 0; z-index: 9999;
+  background: radial-gradient(ellipse at center, #1a0a05 0%, #0d0402 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 30px;
+  background-image:
+    radial-gradient(ellipse at 30% 30%, rgba(201,149,42,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 70%, rgba(107,31,31,0.15) 0%, transparent 50%);
+">
+  <!-- Ornament top -->
+  <div style="font-size:2.5rem; color: var(--gold); letter-spacing:10px; margin-bottom:10px; text-shadow: 0 0 20px rgba(201,149,42,0.5);">༄ ༅ ༄</div>
+
+  <h1 style="font-family:'Noto Serif Myanmar',serif; color: var(--gold-light); font-size: clamp(1.2rem,4vw,2rem); text-align:center; margin-bottom:4px; text-shadow: 0 0 20px rgba(201,149,42,0.4);">ဝဂ္ဂ ယတြာ တွက်ချက်မှုစနစ်</h1>
+  <div style="height:2px; width:200px; background: linear-gradient(90deg,transparent,var(--gold),transparent); margin:10px 0 24px;"></div>
+
+  <!-- Random Code Display -->
+  <div style="background: rgba(44,24,16,0.8); border: 1px solid rgba(201,149,42,0.3); border-radius: 12px; padding: 20px 24px; text-align:center; margin-bottom: 24px; width: 100%; max-width: 340px;">
+    <div style="font-size:0.75rem; color: var(--gold-dark); margin-bottom:12px; letter-spacing:2px;">— သင့် Random Code —</div>
+    <div id="lock-code-boxes" style="display:flex; justify-content:center; gap:8px; margin-bottom:14px;"></div>
+    <div style="font-size:0.7rem; color: var(--parchment); opacity:0.7; line-height:1.8;">
+      Saya Zaw ထံ ဆက်သွယ်ပြီး<br>
+      <span style="color:var(--gold);">Password ထုတ်ပေးရန် တောင်းခံပါ</span>
+    </div>
+  </div>
+
+  <!-- Password Input -->
+  <div style="width:100%; max-width:340px; margin-bottom:16px;">
+    <input type="number" id="lock-pw-input" placeholder="Password ထည့်ပါ"
+      style="width:100%; background:rgba(245,236,215,0.08); border:1px solid rgba(201,149,42,0.4); border-radius:10px; padding:14px; color:var(--ivory); font-family:'Noto Serif Myanmar',serif; font-size:1.2rem; text-align:center; letter-spacing:6px; outline:none;"
+      oninput="checkLockPassword()"
+      onkeydown="if(event.key==='Enter') checkLockPassword(true)">
+  </div>
+
+  <!-- Error msg -->
+  <div id="lock-error" style="color:#FF6B6B; font-size:0.8rem; min-height:20px; margin-bottom:12px; text-align:center;"></div>
+
+  <!-- Unlock Button -->
+  <button onclick="checkLockPassword(true)" style="
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-dark));
+    border:none; border-radius:10px; padding:13px 40px;
+    font-family:'Noto Serif Myanmar',serif; font-size:1rem;
+    color: var(--dark-brown); font-weight:bold; cursor:pointer;
+    letter-spacing:2px; box-shadow: 0 4px 16px rgba(201,149,42,0.3);
+    transition: all 0.3s;
+  " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+    ✦ ဝင်ရောက်မည် ✦
+  </button>
+
+  <div style="margin-top:20px; font-size:0.65rem; color:var(--gold-dark); opacity:0.6; letter-spacing:2px;">သရောဒယဗေဒင်ပညာ</div>
+</div>
+<!-- ===== END LOCK SCREEN ===== -->
+
+<div class="page-wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-ornament">༄ ༅ ༄</div>
+    <h1>ဝဂ္ဂ ယတြာ တွက်ချက်မှုစနစ်</h1>
+    <h2>VAGGA YATRA CALCULATOR</h2>
+    <div style="height:2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 12px 0;"></div>
+    <p class="header-desc">သရောဒယဗေဒင်ပညာ — အမည် / ဘုရား / လှူဖွယ်<br>ဝဂ္ဂတွေတူရင် အကျိုးပေးတဲ့ ယတြာဖြစ်ပါတယ်</p>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('calculator')">✦ ယတြာတွက်</button>
+    <button class="tab-btn" onclick="switchTab('reference')">✦ ကိုးကားဇယား</button>
+    <button class="tab-btn" onclick="switchTab('awtattan')">✦ အဝတ္တာန်</button>
+  </div>
+
+  <!-- TAB 1: Calculator -->
+  <div id="tab-calculator" class="tab-content active">
+    <div class="main-calc">
+      <div class="section-title">ဝဂ္ဂ တွက်ချက်မှု</div>
+
+      <div class="calc-section">
+
+        <!-- Name Card -->
+        <div class="calc-card">
+          <div class="calc-card-icon">👤</div>
+          <h3>လူ အမည်</h3>
+          <div class="input-group">
+            <label>မြန်မာ အမည် ရိုက်ထည့်ပါ</label>
+            <input type="text" id="name-input" placeholder="ဥပမာ - ဇော် အောင် ထွတ်" oninput="autoCalc()">
+          </div>
+          <div class="calc-result" id="name-result">
+            <span class="result-label">အမည်ဝဂ္ဂ</span>
+            <span class="result-num" id="name-num">—</span>
+            <span class="vagga-badge" id="name-vagga">—</span>
+          </div>
+        </div>
+
+        <!-- Temple Card -->
+        <div class="calc-card">
+          <div class="calc-card-icon">🙏</div>
+          <h3>ဘုရားဘွဲ့</h3>
+          <div class="input-group">
+            <label>ဘုရား / စေတီ အမည်</label>
+            <input type="text" id="temple-input" placeholder="ဥပမာ - ကျိုက် က လို့" oninput="autoCalc()">
+          </div>
+          <div class="calc-result" id="temple-result">
+            <span class="result-label">ဘုရားဝဂ္ဂ</span>
+            <span class="result-num" id="temple-num">—</span>
+            <span class="vagga-badge" id="temple-vagga">—</span>
+          </div>
+        </div>
+
+        <!-- Offering Card -->
+        <div class="calc-card">
+          <div class="calc-card-icon">🌸</div>
+          <h3>လှူဖွယ်ပန်း</h3>
+          <div class="input-group">
+            <label>လှူဖွယ် ပစ္စည်း အမည်</label>
+            <input type="text" id="offering-input" placeholder="ဥပမာ - ကိတ်" oninput="autoCalc()">
+          </div>
+          <div class="calc-result" id="offering-result">
+            <span class="result-label">လှူဖွယ်ဝဂ္ဂ</span>
+            <span class="result-num" id="offering-num">—</span>
+            <span class="vagga-badge" id="offering-vagga">—</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Manual Entry Area -->
+      <div style="background: rgba(44,24,16,0.5); border: 1px solid rgba(201,149,42,0.2); border-radius: 10px; padding: 16px; margin-bottom: 12px;">
+        <div style="font-size: 0.78rem; color: var(--gold); margin-bottom: 10px; text-align: center;">✦ တိုက်ရိုက် ကိန်းဂဏန်း ထည့်တွက် ✦</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+          <div class="input-group" style="margin:0">
+            <label>အမည် ပေါင်းလဒ်</label>
+            <input type="number" id="name-manual" placeholder="ဥပမာ - 9" min="1" oninput="manualCalc('name')">
+          </div>
+          <div class="input-group" style="margin:0">
+            <label>ဘုရား ပေါင်းလဒ်</label>
+            <input type="number" id="temple-manual" placeholder="ဥပမာ - 17" min="1" oninput="manualCalc('temple')">
+          </div>
+          <div class="input-group" style="margin:0">
+            <label>လှူဖွယ် ပေါင်းလဒ်</label>
+            <input type="number" id="offering-manual" placeholder="ဥပမာ - 9" min="1" oninput="manualCalc('offering')">
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-calc" onclick="calculate()">✦ ဝဂ္ဂ စစ်ဆေးမည် ✦</button>
+    </div>
+
+    <!-- Result Panel -->
+    <div class="result-panel" id="result-panel">
+      <h3>✦ ယတြာ စစ်ဆေးချက် ✦</h3>
+
+      <div id="result-rows"></div>
+
+      <div class="match-indicator" id="match-indicator"></div>
+
+      <!-- Awtattan result -->
+      <div id="awtattan-result-section" style="margin-top: 16px; display: none;">
+        <div class="section-title" style="font-size: 0.85rem; margin-bottom: 10px;">အဝတ္တာန် (နာမ → ဘုရား)</div>
+        <div class="cycle-display" id="awtattan-cycle"></div>
+        <div style="text-align: center; margin-top: 10px; font-size: 0.85rem; color: var(--teal-light);" id="awtattan-verdict"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: Reference -->
+  <div id="tab-reference" class="tab-content">
+    <div class="vagga-table-section">
+      <div class="section-title">ဝဂ္ဂ ဇယား</div>
+      <div class="vagga-grid" id="vagga-ref-grid"></div>
+    </div>
+
+    <div class="vagga-table-section">
+      <div class="section-title">အက္ခရာ တန်ဖိုး ဇယား</div>
+      <div class="letter-table" id="letter-table"></div>
+      <div style="margin-top: 12px; font-size: 0.7rem; color: var(--parchment); opacity: 0.7; text-align: center;">
+        * ပေါင်းလဒ် ÷ ၈ → ကြွင်း ၁=တံခွန်, ၂=မြွေ, ၃=ဟင်္သာ, ၄=ကြက်ငှက်, ၅=နွားမ, ၆=မြင်း, ၇=မြေပဲ့, ၈/၀=ဆင်
+      </div>
+    </div>
+
+    <div class="vagga-table-section">
+      <div class="section-title">ဝဂ္ဂ (၉) မျိုး အဓိပ္ပာယ်</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;" id="vagga-meanings"></div>
+    </div>
+  </div>
+
+  <!-- TAB 3: Awtattan -->
+  <div id="tab-awtattan" class="tab-content">
+    <div class="awtattan-section">
+      <div class="section-title">အဝတ္တာန် (၅) ပါး</div>
+      <div class="awtattan-grid" id="awtattan-cards"></div>
+    </div>
+
+    <div class="vagga-table-section">
+      <div class="section-title">ဝဏ္ဏ သရစက် — အဝတ္တာန် ရေတွက်နည်း</div>
+      <p style="font-size: 0.78rem; color: var(--parchment); opacity: 0.8; line-height: 1.8; margin-bottom: 12px;">
+        အမည်ရဲ့ ပထမ အက္ခရာမှ ဘုရားဘွဲ့ ပထမ အက္ခရာ အထိ ဝဏ္ဏ သရစက်ပေါ်တွင် ရေတွက်ပါ။
+        ရရှိသော အတိကို (၅) နဲ့ မော်ဂျူလိုက်ကာ အဝတ္တာန် စစ်ပါ။
+      </p>
+      <div id="vowel-wheel" style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px;"></div>
+    </div>
+  </div>
+
+  <!-- END TABS -->
+
+  <div class="footer">༄ သရောဒယဗေဒင်ပညာ ༄<br>Myanmar Traditional Astrology System</div>
+</div>
+
+<script>
+// =====================
+// DATA
+// =====================
+
+// Myanmar letter values (based on the image)
+const letterValues = {
+  'က':1,'ခ':2,'ဂ':3,'ဃ':4,'င':5,
+  'စ':1,'ဆ':2,'ဇ':3,'ဈ':4,'ည':5,
+  'ဋ':1,'ဌ':2,'ဍ':3,'ဎ':4,'ဏ':5,
+  'တ':1,'ထ':2,'ဒ':3,'ဓ':4,'န':5,
+  'ပ':1,'ဖ':2,'ဗ':3,'ဘ':4,'မ':5,
+  'ယ':1,'ရ':3,'လ':5,'ဝ':7,'သ':7,'ဟ':7,'ဠ':7,'အ':7,
+  'ာ':0,'ိ':0,'ီ':0,'ု':0,'ူ':0,'ေ':0,'ဲ':0,'ော်':0,
+  // Tones / finals add specific values:
+  ' တ်':1,'န်':5,'မ်':5,'ပ်':1,'က်':1,'ိတ်':1,
+};
+
+// အက္ခရာ တန်ဖိုး — မူရင်းဇယားအတိုင်း (ဓာတ်ပုံမှ)
+const consonantVal = {
+  // တန်ဖိုး ၅ — က ဝဂ (ကျောက်=၅, ကြီး=၅, ငှက်=၅ ✓)
+  'က':5,'ခ':5,'ဂ':5,'ဃ':5,'င':5,
+  // တန်ဖိုး ၇
+  'ဋ':7,'ဌ':7,'ဍ':7,'ဎ':7,'ဏ':7,
+  'စ':7,'ဆ':7,
+  'တ':7,'ထ':7,'ဒ':7,'ဓ':7,'န':7,
+  'ပ':1,'ဖ':1,'ဘ':1,'ဗ':1,
+  // တန်ဖိုး ၆
+  'ဇ':6,'ဈ':6,'ည':6,'ဉ':6,
+  // တန်ဖိုး ၁
+  'မ':1,
+  // တန်ဖိုး ၂
+  'သ':2,'ဟ':2,'ဠ':2,
+  // တန်ဖိုး ၃
+  'ရ':3,'လ':3,
+  // အ ဝဂ
+  'အ':8,'ဣ':8,'ဤ':8,'ဥ':8,'ဦ':8,'ဧ':8,'ဩ':8,'ဪ':8,
+  // ယ၊ ဝ
+  'ယ':2,'ဝ':2,
+};
+
+const vaggaNames = {
+  1: 'တံခွန်',
+  2: 'အခိုး',
+  3: 'ခြင်္သေ့',
+  4: 'ခွေး',
+  5: 'နွား',
+  6: 'မြည်း',
+  7: 'ဆင်',
+  0: 'ကျီး'
+};
+
+const vaggaMeanings = {
+  1: 'ပြည့်ဝကြွယ်ဝမှု၊ လာဘ်ရွှင်မှု၊ စီးပွါးဖြစ်မှု၊ အန္တာရာယ်ကင်းမှု',
+  2: 'အခိုး ဝဂ္ဂ — တိုးတက်မှု',
+  3: 'ခြင်္သေ့ ဝဂ္ဂ — ငြိမ်သက်သမာဓိ၊ တည်ငြိမ်မှု',
+  4: 'ခွေး ဝဂ္ဂ — အကျိုးပြည့်ဝမှု',
+  5: 'နွား ဝဂ္ဂ — ကြွယ်ဝချမ်းသာမှု၊ မိသားစုပေါများမှု',
+  6: 'မြည်း ဝဂ္ဂ — လျင်မြန်ဖြတ်သန်းမှု',
+  7: 'ဆင် ဝဂ္ဂ — ဂုဏ်သတင်းကောင်းမှု၊ ခိုင်မာမှု',
+  0: 'ကျီး ဝဂ္ဂ — ကြွင်း ၀'
+};
+
+const awtattan = [
+  { num: 1, name: 'ဗာလ', desc: 'ဖြစ်တည်မှုရဲ့ အစ / Beginning', color: '#7CE87C' },
+  { num: 2, name: 'ကုမာရ', desc: 'ကြီးပွါးစေမှု / Growth', color: '#7CB5E8' },
+  { num: 3, name: 'ယုဝ', desc: 'ခိုင်ခန့်မှု / Strength & Completion', color: '#E8D47C' },
+  { num: 4, name: 'ဝုဒ္ဓ', desc: 'ငြိမ်းချမ်းမှု / Peace', color: '#C87CE8' },
+  { num: 5, name: 'မတ', desc: 'အသစ်ဖန်တီးမှု / New Energy', color: '#E87C7C' },
+];
+
+// Vowel wheel order (Myanmar consonants cycle)
+const vowelWheel = ['က','ခ','ဂ','ဃ','င','စ','ဆ','ဇ','ဈ','ည','ဋ','ဌ','ဍ','ဎ','ဏ','တ','ထ','ဒ','ဓ','န','ပ','ဖ','ဗ','ဘ','မ','ယ','ရ','လ','ဝ','သ','ဟ','ဠ','အ'];
+
+// =====================
+// FUNCTIONS
+// =====================
+
+function getVaggaFromTotal(total) {
+  if (total === 0) return 0;
+  return total % 8; // ကြွင်း ၁=တံခွန်, ၂=မြွေ, ၃=ဟင်္သာ, ၄=ကြက်, ၅=နွားမ, ၆=မြင်း, ၇=မြေပဲ့, ၀=ဆင်
+}
+
+function getVaggaName(v) {
+  return vaggaNames[v] || '—';
+}
+
+function calcWordValue(text) {
+  if (!text || text.trim() === '') return 0;
+  // မြန်မာ syllable တစ်ခုမှ ဝဂ ကိန်းတန်ဖိုး ရှာပြီး ပေါင်းရသည်
+  // syllable တစ်ခုလျှင် ပထမ consonant တစ်ခုသာ တွက်သည်
+  const syllables = text.trim().split(/[\s]+/);
+  let total = 0;
+
+  syllables.forEach(syl => {
+    // ပထမ consonant ကိုသာ ရှာပြီး ဝဂ ကိန်းတန်ဖိုး ယူသည်
+    let found = false;
+    for (let i = 0; i < syl.length; i++) {
+      const ch = syl[i];
+      if (consonantVal[ch] !== undefined) {
+        total += consonantVal[ch];
+        found = true;
+        break; // syllable တစ်ခုလျှင် တစ်ကြိမ်သာ
+      }
+    }
+    // consonant မတွေ့ရင် ဂဏန်းအနေ ကြိုးစားကြည့်
+    if (!found) {
+      const num = parseInt(syl);
+      if (!isNaN(num)) total += num;
+    }
+  });
+
+  return total;
+}
+
+function autoCalc() {
+  const nameVal = calcWordValue(document.getElementById('name-input').value);
+  const templeVal = calcWordValue(document.getElementById('temple-input').value);
+  const offeringVal = calcWordValue(document.getElementById('offering-input').value);
+
+  updateCard('name', nameVal);
+  updateCard('temple', templeVal);
+  updateCard('offering', offeringVal);
+}
+
+function manualCalc(type) {
+  const val = parseInt(document.getElementById(type + '-manual').value) || 0;
+  updateCard(type, val);
+}
+
+function updateCard(type, total) {
+  const vagga = total > 0 ? getVaggaFromTotal(total) : null;
+  document.getElementById(type + '-num').textContent = total > 0 ? total : '—';
+  const badge = document.getElementById(type + '-vagga');
+  if (vagga !== null && total > 0) {
+    const cssClass = vagga === 0 ? 1 : vagga; // 0 remainder = တံခွန် = class 1
+    badge.textContent = `ဝဂ္ဂ ကြွင်း(${vagga}) ${getVaggaName(vagga).split(' ')[0]}`;
+    badge.className = `vagga-badge vagga-${cssClass}`;
+  } else {
+    badge.textContent = '—';
+    badge.className = 'vagga-badge';
+  }
+}
+
+function getValues() {
+  // Priority: manual input > text input
+  let nameTotal = parseInt(document.getElementById('name-manual').value) || calcWordValue(document.getElementById('name-input').value);
+  let templeTotal = parseInt(document.getElementById('temple-manual').value) || calcWordValue(document.getElementById('temple-input').value);
+  let offeringTotal = parseInt(document.getElementById('offering-manual').value) || calcWordValue(document.getElementById('offering-input').value);
+  return { nameTotal, templeTotal, offeringTotal };
+}
+
+function calculate() {
+  const { nameTotal, templeTotal, offeringTotal } = getValues();
+
+  if (nameTotal === 0 && templeTotal === 0 && offeringTotal === 0) {
+    alert('အမည် သို့မဟုတ် ကိန်းဂဏန်း ထည့်ပါ');
+    return;
+  }
+
+  const nameVagga = nameTotal > 0 ? getVaggaFromTotal(nameTotal) : 0;
+  const templeVagga = templeTotal > 0 ? getVaggaFromTotal(templeTotal) : 0;
+  const offeringVagga = offeringTotal > 0 ? getVaggaFromTotal(offeringTotal) : 0;
+
+  // Build results
+  const panel = document.getElementById('result-panel');
+  const rows = document.getElementById('result-rows');
+
+  rows.innerHTML = '';
+
+  const addRow = (label, total, vagga) => {
+    if (total === 0) return;
+    const cssV = vagga === 0 ? 1 : vagga;
+    const r = document.createElement('div');
+    r.className = 'result-row';
+    r.innerHTML = `
+      <span class="r-label">${label}</span>
+      <span class="r-value">
+        ပေါင်း ${total} ÷ ၈ = ကြွင်း <strong>${vagga}</strong>
+        <span class="vagga-badge vagga-${cssV}" style="margin-left:6px; font-size:0.7rem; padding:2px 8px;">${getVaggaName(vagga)}</span>
+      </span>
+    `;
+    rows.appendChild(r);
+  };
+
+  addRow('👤 လူ အမည်', nameTotal, nameVagga);
+  addRow('🙏 ဘုရားဘွဲ့', templeTotal, templeVagga);
+  addRow('🌸 လှူဖွယ်', offeringTotal, offeringVagga);
+
+  // Match check — compare remainders directly
+  const hasName = nameTotal > 0;
+  const hasTemple = templeTotal > 0;
+  const hasOffering = offeringTotal > 0;
+  const activeCount = [hasName, hasTemple, hasOffering].filter(Boolean).length;
+
+  const nameTempleMatch = hasName && hasTemple && nameVagga === templeVagga;
+  const nameOfferMatch  = hasName && hasOffering && nameVagga === offeringVagga;
+  const allMatch = activeCount >= 2 && nameTempleMatch && (!hasOffering || nameOfferMatch);
+  const partialMatch = !allMatch && (nameTempleMatch || nameOfferMatch);
+
+  const firstActive = hasName ? nameVagga : hasTemple ? templeVagga : offeringVagga;
+  const vaggaLabel = `${getVaggaName(firstActive)} (ကြွင်း ${firstActive})`;
+
+  const matchEl = document.getElementById('match-indicator');
+  if (allMatch) {
+    matchEl.className = 'match-indicator match-yes';
+    matchEl.innerHTML = `✦ ${vaggaLabel} — ဝဂ္ဂ အားလုံး တူညီသည် ✦<br><small style="font-size:0.75rem; margin-top:4px; display:block;">ယတြာ အကျိုးပြည့်ဝပါသည်<br>လာဘ်ရွှင်တယ် ✦ စီးပွါးဖြစ်တယ် ✦ အန္တာရာယ်ကင်းတယ်</small>`;
+  } else if (partialMatch) {
+    matchEl.className = 'match-indicator match-yes';
+    matchEl.innerHTML = `✦ တစိတ်တပိုင်း ဝဂ္ဂတူ ✦<br><small style="font-size:0.75rem; margin-top:4px; display:block;">အကျိုးပြည့်ဝရန် ကျန်ဝဂ္ဂတူသော ပစ္စည်း/ဘုရား ရှာဖွေပါ</small>`;
+  } else {
+    matchEl.className = 'match-indicator match-no';
+    matchEl.innerHTML = `✦ ဝဂ္ဂ မတူ ✦<br><small style="font-size:0.75rem; margin-top:4px; display:block;">ဝဂ္ဂတူသော ဘုရား / လှူဖွယ် ပစ္စည်းကို ရွေးချယ်ပါ</small>`;
+  }
+
+  // Awtattan section
+  if (nameVagga > 0 && templeVagga > 0) {
+    showAwtattan(nameVagga, templeVagga);
+  }
+
+  panel.classList.add('visible');
+  panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function showAwtattan(nameV, templeV) {
+  const section = document.getElementById('awtattan-result-section');
+  const cycleDiv = document.getElementById('awtattan-cycle');
+  const verdictDiv = document.getElementById('awtattan-verdict');
+
+  // Find distance from nameV consonant to templeV consonant in vowel wheel
+  // Simplified: use vagga numbers as proxy for wheel position
+  // Count from nameVagga to templeVagga going forward
+  let dist = templeV - nameV;
+  if (dist <= 0) dist += 8;
+
+  const awt = awtattan[(dist - 1) % 5];
+
+  // Show cycle
+  cycleDiv.innerHTML = '';
+  for (let i = 1; i <= 8; i++) {
+    const isName = i === nameV;
+    const isTemple = i === templeV;
+    const step = document.createElement('span');
+    step.className = `cycle-step${(isName || isTemple) ? ' active-step' : ''}`;
+    step.innerHTML = `${i}${isName ? '(နာ)' : isTemple ? '(ဘု)' : ''}`;
+    cycleDiv.appendChild(step);
+    if (i < 8) {
+      const arr = document.createElement('span');
+      arr.className = 'cycle-arrow';
+      arr.textContent = '›';
+      cycleDiv.appendChild(arr);
+    }
+  }
+
+  verdictDiv.innerHTML = `<strong style="color: var(--gold);">${awt.name}</strong> — ${awt.desc}`;
+  section.style.display = 'block';
+}
+
+// =====================
+// RENDER REFERENCE
+// =====================
+
+function renderReference() {
+  // Vagga grid
+  const grid = document.getElementById('vagga-ref-grid');
+  const vaggaData = [
+    { v: 1, name: 'တံခွန်',  letters: 'လ,ဝ,သ,ဟ,ဠ,အ', num: 'ကြွင်း ၁', rem: '1' },
+    { v: 2, name: 'အခိုး',  letters: 'က,ခ,ဂ,ဃ,င',   num: 'ကြွင်း ၂', rem: '2' },
+    { v: 3, name: 'ခြင်္သေ့', letters: 'စ,ဆ,ဇ,ဈ,ည',   num: 'ကြွင်း ၃', rem: '3' },
+    { v: 4, name: 'ခွေး',   letters: 'ဋ,ဌ,ဍ,ဎ,ဏ',   num: 'ကြွင်း ၄', rem: '4' },
+    { v: 5, name: 'နွား',    letters: 'တ,ထ,ဒ,ဓ,န',   num: 'ကြွင်း ၅', rem: '5' },
+    { v: 6, name: 'မြည်း',  letters: 'ပ,ဖ,ဗ,ဘ,မ',   num: 'ကြွင်း ၆', rem: '6' },
+    { v: 7, name: 'ဆင်',    letters: 'ယ,ဝ,ရ,လ,သ,ဟ', num: 'ကြွင်း ၇', rem: '7' },
+    { v: 0, name: 'ကျီး',   letters: 'အ,ဣ,ဤ,ဥ,ဦ',  num: 'ကြွင်း ၀', rem: '0' },
+  ];
+
+  grid.innerHTML = `
+    <div class="vg-cell header">ကြွင်း</div>
+    <div class="vg-cell header">ဝဂ္ဂနာမ</div>
+    <div class="vg-cell header" style="grid-column: span 6">အနဲတန်ဖိုး အက္ခရာများ</div>
+  `;
+
+  vaggaData.forEach(d => {
+    const letters = d.letters.split(',');
+    const cssV = d.v === 0 ? 1 : d.v;
+    grid.innerHTML += `
+      <div class="vg-cell" style="font-weight:bold; color: var(--gold); font-size:0.65rem;">${d.num}</div>
+      <div class="vg-cell vagga-name vagga-${cssV}" style="font-size:0.72rem;">${d.name}</div>
+      ${letters.map(l => `<div class="vg-cell">${l.trim()}</div>`).join('')}
+      ${letters.length < 6 ? Array(6 - letters.length).fill('<div class="vg-cell" style="opacity:0.2">—</div>').join('') : ''}
+    `;
+  });
+
+  // Vagga meanings — skip key '0' (duplicate of 1)
+  const vm = document.getElementById('vagga-meanings');
+  vm.innerHTML = Object.entries(vaggaNames).filter(([k]) => k !== '0').map(([k, name]) => {
+    const cssV = parseInt(k) === 0 ? 1 : parseInt(k);
+    return `
+    <div style="background: rgba(44,24,16,0.6); border: 1px solid rgba(201,149,42,0.25); border-radius: 8px; padding: 10px;">
+      <div class="vagga-badge vagga-${cssV}" style="display: inline-block; margin-bottom: 6px; font-size: 0.75rem;">ကြွင်း${k} — ${name}</div>
+      <div style="font-size: 0.7rem; color: var(--parchment); opacity: 0.8;">${vaggaMeanings[k]}</div>
+    </div>`;
+  }).join('');
+
+  // Letter table (syllable values)
+  const lt = document.getElementById('letter-table');
+  const letterData = [
+    {ch:'က',v:1},{ch:'ခ',v:2},{ch:'ဂ',v:3},{ch:'ဃ',v:4},{ch:'င',v:5},
+    {ch:'စ',v:1},{ch:'ဆ',v:2},{ch:'ဇ',v:3},{ch:'ဈ',v:4},{ch:'ည',v:5},
+    {ch:'ဋ',v:1},{ch:'ဌ',v:2},{ch:'ဍ',v:3},{ch:'ဎ',v:4},{ch:'ဏ',v:5},
+    {ch:'တ',v:1},{ch:'ထ',v:2},{ch:'ဒ',v:3},{ch:'ဓ',v:4},{ch:'န',v:5},
+    {ch:'ပ',v:1},{ch:'ဖ',v:2},{ch:'ဗ',v:3},{ch:'ဘ',v:4},{ch:'မ',v:5},
+    {ch:'ယ',v:1},{ch:'ရ',v:3},{ch:'လ',v:5},{ch:'ဝ',v:7},
+    {ch:'သ',v:7},{ch:'ဟ',v:7},{ch:'ဠ',v:7},{ch:'အ',v:7},
+  ];
+  if (lt) lt.innerHTML = [
+    // က ဝဂ = ၅
+    {ch:'က',v:5},{ch:'ခ',v:5},{ch:'ဂ',v:5},{ch:'ဃ',v:5},{ch:'င',v:5},
+    // စ ဝဂ = ၇
+    {ch:'စ',v:7},{ch:'ဆ',v:7},
+    // ဇ,ဈ,ည = ၆
+    {ch:'ဇ',v:6},{ch:'ဈ',v:6},{ch:'ည',v:6},{ch:'ဉ',v:6},
+    // ဋ ဝဂ = ၇
+    {ch:'ဋ',v:7},{ch:'ဌ',v:7},{ch:'ဍ',v:7},{ch:'ဎ',v:7},{ch:'ဏ',v:7},
+    // တ ဝဂ = ၇
+    {ch:'တ',v:7},{ch:'ထ',v:7},{ch:'ဒ',v:7},{ch:'ဓ',v:7},{ch:'န',v:7},
+    // ပ ဝဂ = ၁
+    {ch:'ပ',v:1},{ch:'ဖ',v:1},{ch:'ဗ',v:1},{ch:'ဘ',v:1},{ch:'မ',v:1},
+    // ယ,ဝ = ၂
+    {ch:'ယ',v:2},{ch:'ဝ',v:2},
+    // ရ,လ = ၃
+    {ch:'ရ',v:3},{ch:'လ',v:3},
+    // သ ဝဂ = ၂
+    {ch:'သ',v:2},{ch:'ဟ',v:2},{ch:'ဠ',v:2},
+    // အ ဝဂ = ၈
+    {ch:'အ',v:8},{ch:'ဣ',v:8},{ch:'ဤ',v:8},{ch:'ဥ',v:8},{ch:'ဦ',v:8},
+  ].map(l => `
+    <div class="lt-cell">
+      <span class="lt-char">${l.ch}</span>
+      <span style="color: var(--gold-dark);">${l.v}</span>
+    </div>
+  `).join('');
+}
+
+function renderAwtattan() {
+  const container = document.getElementById('awtattan-cards');
+  container.innerHTML = awtattan.map(a => `
+    <div class="awt-card">
+      <div class="awt-num" style="color: ${a.color};">${a.num}</div>
+      <div class="awt-name" style="color: ${a.color};">${a.name}</div>
+      <div class="awt-desc">${a.desc}</div>
+    </div>
+  `).join('');
+
+  // Vowel wheel
+  const vw = document.getElementById('vowel-wheel');
+  vw.innerHTML = vowelWheel.map((ch, i) => `
+    <div style="background: rgba(201,149,42,0.1); border: 1px solid rgba(201,149,42,0.2); border-radius: 4px; padding: 5px 2px; text-align: center; font-size: 0.75rem;">
+      <div style="color: var(--gold-light);">${ch}</div>
+      <div style="color: var(--parchment); font-size: 0.6rem; opacity: 0.6;">${i + 1}</div>
+    </div>
+  `).join('');
+}
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b, i) => {
+    const tabs = ['calculator', 'reference', 'awtattan'];
+    b.classList.toggle('active', tabs[i] === name);
+  });
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+}
+
+// =====================
+// LOCK SCREEN FUNCTIONS
+// =====================
+
+let lockCode = '';
+
+function generateLockCode() {
+  lockCode = '';
+  for (let i = 0; i < 6; i++) lockCode += Math.floor(Math.random() * 10);
+  renderLockCodeBoxes(lockCode);
+}
+
+function renderLockCodeBoxes(code) {
+  const el = document.getElementById('lock-code-boxes');
+  if (!el) return;
+  el.innerHTML = code.split('').map((d, i) => `
+    <div style="
+      width: 44px; height: 54px;
+      background: rgba(44,24,16,0.9);
+      border: 2px solid ${i < 2 ? 'var(--gold)' : i >= 3 ? 'var(--teal)' : 'rgba(255,255,255,0.1)'};
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; font-weight: bold;
+      color: ${i < 2 ? 'var(--gold-light)' : i >= 3 ? '#7ECECE' : 'rgba(255,255,255,0.3)'};
+      box-shadow: ${i < 2 ? '0 0 10px rgba(201,149,42,0.4)' : i >= 3 ? '0 0 10px rgba(27,107,107,0.4)' : 'none'};
+      font-family: monospace;
+    ">${d}</div>
+  `).join('');
+}
+
+function calcLockPassword(code) {
+  const A = parseInt(code.slice(0, 2));
+  const B = parseInt(code.slice(3, 6));
+  return (A + B) * 9;
+}
+
+function checkLockPassword(force = false) {
+  const input = document.getElementById('lock-pw-input').value.trim();
+  const errEl = document.getElementById('lock-error');
+
+  if (!input) { errEl.textContent = ''; return; }
+
+  const correct = calcLockPassword(lockCode);
+
+  if (parseInt(input) === correct) {
+    // Correct — animate unlock
+    const lock = document.getElementById('lock-screen');
+    lock.style.transition = 'opacity 0.6s, transform 0.6s';
+    lock.style.opacity = '0';
+    lock.style.transform = 'scale(1.05)';
+    setTimeout(() => lock.style.display = 'none', 600);
+    errEl.textContent = '';
+  } else if (force || input.length >= 4) {
+    errEl.textContent = '✗ Password မမှန်ပါ — Saya Zaw ထံ ဆက်သွယ်ပါ';
+    document.getElementById('lock-pw-input').style.borderColor = '#FF6B6B';
+    setTimeout(() => {
+      document.getElementById('lock-pw-input').style.borderColor = 'rgba(201,149,42,0.4)';
+    }, 1500);
+  }
+}
+
+// Init
+renderReference();
+renderAwtattan();
+generateLockCode();
+</script>
+</body>
+</html>
